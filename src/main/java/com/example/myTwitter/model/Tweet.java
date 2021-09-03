@@ -1,34 +1,27 @@
 package com.example.myTwitter.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.sql.Date;
 
+@Entity
+@Data
+@Table(name = "tweet")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Tweet {
 
+    @Id
+    @GeneratedValue
     private String user_id;
+
+    @Id
     private String tweet_message;
+
+    @Id
     private Date tweet_on;
 
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getTweet_message() {
-        return tweet_message;
-    }
-
-    public void setTweet_message(String tweet_message) {
-        this.tweet_message = tweet_message;
-    }
-
-    public Date getTweet_on() {
-        return tweet_on;
-    }
-
-    public void setTweet_on(Date tweet_on) {
-        this.tweet_on = tweet_on;
-    }
 }
